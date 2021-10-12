@@ -14,17 +14,20 @@ public class LocomotionController : MonoBehaviour
     // the threshold when its activated
     public float activationThreshold = 0.1f;
     
+    //bools to have the teleportation on the empty hand
+    public bool EnableLeftTeleport { get; set; } = true;
+    public bool EnableRightTeleport { get; set; } = true;
    
     void Update()
     {
         if (leftTeleportRay)
         {
-            leftTeleportRay.gameObject.SetActive(CheckIfActivated(leftTeleportRay));
+            leftTeleportRay.gameObject.SetActive(EnableLeftTeleport && CheckIfActivated(leftTeleportRay));
         }
         
         if (rightTeleportRay)
         {
-            rightTeleportRay.gameObject.SetActive(CheckIfActivated(rightTeleportRay));
+            rightTeleportRay.gameObject.SetActive(EnableRightTeleport && CheckIfActivated(rightTeleportRay));
         }
     }
 
