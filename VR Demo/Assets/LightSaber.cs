@@ -26,9 +26,9 @@ public class LightSaber : MonoBehaviour
         }
         else
         {
-            audioSource.Stop();
+           audioSource.Stop();
         }
         
-        animator.SetBool("lightSabeOn", !isOn);
+        animator.SetBool("LightSaberOn", !isOn);
     }
 }
